@@ -1,0 +1,17 @@
+﻿<!-- nav -->
+<nav class="navbar fixed-top navbar-expand navbar-light bg-light" *ngIf="currentUser">
+    <div class="navbar-nav">
+        <img src="../../assets/imagens/logotipo.svg"  class="logo" >
+        <a class="nav-item navbar-brand"  routerLink="/" ><h2 style="margin: 50px 0 0 50px;">Home</h2></a>
+        <a class="nav-item navbar-brand" (click)="logout()"><h2 style="margin: 50px 0 0 50px; " >Logout</h2></a>
+    </div>
+</nav>
+
+<!-- main app container -->
+<div class="container">
+    <router-outlet></router-outlet>
+</div>
+
+<!-- credits -->
+<div class="text-center mt-4">
+</div>

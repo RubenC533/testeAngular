@@ -1,0 +1,17 @@
+.home_img{
+    background-image: url(../assets/imagens/background.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.login_div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -10%);
+}
+
+.logo {
+    margin-top: 5%;
+}
