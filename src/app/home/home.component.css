@@ -1,0 +1,54 @@
+
+#container{
+    background: #ffffff;
+    height: 1150px;
+    width: 2660px;
+    display: flex;
+    margin-top: 130px;
+    margin-left: 20px;
+    flex-direction: row
+}
+.item {
+    width: 600px;
+    height: 1100px;
+    margin: 10px;
+    background: white;
+    
+}
+
+.item2 {
+    width: 2060px;
+    height: 1150px;
+    
+    background: white;
+    
+}
+
+h2{
+    margin: 20px;
+    color: 	#00CED1;
+}
+agm-map {
+    width: 2065px;
+    height: 1150px;
+   
+}
+button {
+    margin-left: 500px;
+    padding-bottom: 10px ;
+}
+
+h3 {
+    margin: 20px;
+    color: #a9a9a9
+}
+
+.inputBorder{
+    margin-left: 20px;
+    outline: 0;
+    border: 0 none;
+}
+
+#busca{
+    margin-left: 20px;
+}

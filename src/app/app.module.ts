@@ -8,6 +8,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { fakeBackendProvider } from './_helpers';
 
 import { AppComponent } from './app.component';
+import { AgmCoreModule } from '@agm/core'
 import { appRoutingModule } from './app.routing';
 
 import { BasicAuthInterceptor, ErrorInterceptor } from './_helpers';
@@ -19,7 +20,10 @@ import { LoginComponent } from './login';
         BrowserModule,
         ReactiveFormsModule,
         HttpClientModule,
-        appRoutingModule
+        appRoutingModule,
+        AgmCoreModule.forRoot({
+            apiKey: 'AIzaSyCz9m6IpP5xznmeF5N8Yt0cvjR8o91FdgQ'
+        })
     ],
     declarations: [
         AppComponent,

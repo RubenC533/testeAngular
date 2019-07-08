@@ -1,17 +1,21 @@
 ﻿<!-- nav -->
 <nav class="navbar fixed-top navbar-expand navbar-light bg-light" *ngIf="currentUser">
     <div class="navbar-nav">
-        <img src="../../assets/imagens/logotipo.svg"  class="logo" >
-        <a class="nav-item navbar-brand"  routerLink="/" ><h2 style="margin: 50px 0 0 50px;">Home</h2></a>
-        <a class="nav-item navbar-brand" (click)="logout()"><h2 style="margin: 50px 0 0 50px; " >Logout</h2></a>
+        <img src="../../assets/imagens/logotipo.svg"  class="logo" style="padding-bottom: 10px; padding-left: 35px" >
+        <a class="nav-item navbar-brand"  routerLink="/" ><h2 style="margin: 60px 0 0 360px; color: #A9a9a9a9 " >Home</h2></a>
+        <a class="nav-item navbar-brand" (click)="logout()"><h2 style="margin: 60px 0 0 30px; color: #A9a9a9a9 " >Logout</h2></a>
     </div>
 </nav>
 
 <!-- main app container -->
-<div class="container">
+<div >
     <router-outlet></router-outlet>
 </div>
 
-<!-- credits -->
-<div class="text-center mt-4">
-</div>
+
+
+
+
+
+
+
