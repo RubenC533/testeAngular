@@ -22,7 +22,8 @@ import { LoginComponent } from './login';
         HttpClientModule,
         appRoutingModule,
         AgmCoreModule.forRoot({
-            apiKey: 'AIzaSyCz9m6IpP5xznmeF5N8Yt0cvjR8o91FdgQ'
+            apiKey: '',
+            libraries: ['geometry', 'places']
         })
     ],
     declarations: [
@@ -37,6 +38,6 @@ import { LoginComponent } from './login';
         // provider used to create fake backend
         fakeBackendProvider
     ],
-    bootstrap: [AppComponent]
+    bootstrap: [HomeComponent]
 })
 export class AppModule { }

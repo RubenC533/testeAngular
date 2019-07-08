@@ -3,7 +3,8 @@
         <h2>BUSCAR POR REGIÃO ATENDIDA</h2>
         <h3>Endereço</h3>
         <div class="input-group mb-1">
-                <input id="busca" type="text" class="form-control" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                
+                <input id="busca" type="text" class="form-control" (keydown.enter)="$event.preventDefault()" placeholder="Search Nearest Location" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" #search>
         </div>
         <button class="btn btn-primary" type="button">BUSCAR</button>
         <h2>DADOS DO LOCAL</h2>
@@ -22,7 +23,7 @@
                
                 <h3>Latitude</h3>
                
-                <input class="inputBorder" type="text" id="txt" />
+                <div>{{latitude}}</div>
                 
                 <h3>Longitude</h3>
                 
