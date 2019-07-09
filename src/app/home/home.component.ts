@@ -8,6 +8,9 @@ import { MapsAPILoader, MouseEvent } from '@agm/core';
 })
 export class HomeComponent implements OnInit {
   title: string = 'AGM project';
+  route: string;
+  administrative_area_level_2: string;
+  administrative_area_level_1: string;
   latitude: number;
   longitude: number;
   zoom: number;
@@ -45,9 +48,11 @@ export class HomeComponent implements OnInit {
           }
  
           //set latitude, longitude and zoom
+          
           this.latitude = place.geometry.location.lat();
           this.longitude = place.geometry.location.lng();
-          this.zoom = 12;
+          
+          this.zoom = 15;
         });
       });
     });
@@ -57,10 +62,11 @@ export class HomeComponent implements OnInit {
   private setCurrentLocation() {
     if ('geolocation' in navigator) {
       navigator.geolocation.getCurrentPosition((position) => {
+           
         this.latitude = position.coords.latitude;
         this.longitude = position.coords.longitude;
         this.zoom = 8;
-        this.getAddress(this.latitude, this.longitude);
+        this.getAddress(this.latitude, this.longitude );
       });
     }
   }
@@ -72,14 +78,15 @@ export class HomeComponent implements OnInit {
     this.longitude = $event.coords.lng;
     this.getAddress(this.latitude, this.longitude);
   }
+  
  
   getAddress(latitude, longitude) {
-    this.geoCoder.geocode({ 'location': { lat: latitude, lng: longitude } }, (results, status) => {
+    this.geoCoder.geocode({ 'location': { lat: latitude, lng: longitude} }, (results, status) => {
       console.log(results);
       console.log(status);
       if (status === 'OK') {
         if (results[0]) {
-          this.zoom = 12;
+          this.zoom = 15;
           this.address = results[0].formatted_address;
         } else {
           window.alert('No results found');
@@ -90,5 +97,50 @@ export class HomeComponent implements OnInit {
  
     });
   }
- 
+  getAddressObject(address_components) {
+    var ShouldBeComponent = {
+      home: ["street_number"],
+      postal_code: ["postal_code"],
+      street: ["street_address", "route"],
+      region: [
+        "administrative_area_level_1",
+        "administrative_area_level_2",
+        "administrative_area_level_3",
+        "administrative_area_level_4",
+        "administrative_area_level_5"
+      ],
+      city: [
+        "locality",
+        "sublocality",
+        "sublocality_level_1",
+        "sublocality_level_2",
+        "sublocality_level_3",
+        "sublocality_level_4"
+      ],
+      country: ["country"]
+    };
+
+    var address = {
+      home: "",
+      postal_code: "",
+      street: "",
+      region: "",
+      city: "",
+      country: ""
+    };
+    address_components.forEach(component => {
+      for (var shouldBe in ShouldBeComponent) {
+        if (ShouldBeComponent[shouldBe].indexOf(component.types[0]) !== -1) {
+          if (shouldBe === "country") {
+            address[shouldBe] = component.short_name;
+          } else {
+            address[shouldBe] = component.long_name;
+          }
+        }
+      }
+    });
+    return address;
+  }
 }
+ 
+

@@ -11,15 +11,15 @@
         <div>
                 <h3>Endereço</h3>
                 
-                <input class="inputBorder" type="text" id="txt" />
+                <div>{{street}}</div>
+
                 
                 <h3>Cidade</h3>
-                
-                <input class="inputBorder" type="text" id="txt" />
+                <div>{{administrative_area_level_2}}</div>
                 
                 <h3>Estado</h3>
-                
-                <input class="inputBorder" type="text" id="txt" />
+
+                <div>{{administrative_area_level_1}}</div>
                
                 <h3>Latitude</h3>
                
@@ -27,12 +27,14 @@
                 
                 <h3>Longitude</h3>
                 
+                <div>{{longitude}}</div>
+                
                 <input class="inputBorder" type="text" id="txt" />
         </div>
     </div>
     <div class="item2">
-            <agm-map [latitude]="lat" [zoom]="zoom" [longitude]="lng">
-                    <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+            <agm-map [latitude]="latitude" [zoom]="zoom" [longitude]="longitude">
+                    <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
              </agm-map>
     </div>
 </div>

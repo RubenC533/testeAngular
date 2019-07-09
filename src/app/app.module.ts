@@ -22,7 +22,7 @@ import { LoginComponent } from './login';
         HttpClientModule,
         appRoutingModule,
         AgmCoreModule.forRoot({
-            apiKey: '',
+            apiKey: 'AIzaSyA3Fh07HUw2qGGpjE8ZYzaZarvIBCQBQAc',
             libraries: ['geometry', 'places']
         })
     ],
